@@ -1,5 +1,8 @@
 #include "microheap.h"
 
+// this example C file is to demonstrate the 
+// heap memory allocator that is built
+
 int main(void) {
     int *ptr = my_malloc(sizeof(int) * 10);
     if (ptr == NULL) {
