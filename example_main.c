@@ -1,6 +1,6 @@
 #include "microheap.h"
 
-// this example C file is to demonstrate the 
+// this example C file is to demonstrate the
 // heap memory allocator that is built
 
 int main(void) {
@@ -18,6 +18,8 @@ int main(void) {
         printf("%d ", ptr[i]);
     }
     printf("\n");
+
+    my_free(ptr);
 
     return 0;
 }
