@@ -188,15 +188,3 @@ Feel free to fork, improve, and submit pull requests. This is an educational pro
 ## 📝 License
 
 MIT License - Feel free to use this code for learning and experimentation.
-
-## 👤 Author
-
-Built from scratch as a learning project to understand low-level memory management.
-
----
-
-<div align="center">
-
-**Made with ❤️ and lots of pointer arithmetic**
-
-</div>
