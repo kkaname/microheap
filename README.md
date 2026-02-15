@@ -123,8 +123,8 @@ Run `example_program.c` to see comprehensive demonstrations:
 
 ```
 ╔═══════════════════════════════════════════════╗
-║     MICROHEAP MEMORY ALLOCATOR DEMO          ║
-║   Custom malloc/free/calloc/realloc          ║
+║     MICROHEAP MEMORY ALLOCATOR DEMO           ║
+║   Custom malloc/free/calloc/realloc           ║
 ╚═══════════════════════════════════════════════╝
 
 =================================================
