@@ -30,15 +30,15 @@ MicroHeap is a custom implementation of dynamic memory allocation functions (`ma
 ```
 Memory Block Structure:
 ┌────────────────────────────────────────┐
-│  Header (32 bytes aligned)            │
-│  ┌──────────────────────────────────┐ │
-│  │ size: Size of the block          │ │
-│  │ is_free: Free/allocated flag     │ │
-│  │ next: Pointer to next block      │ │
-│  └──────────────────────────────────┘ │
+│  Header (32 bytes aligned)             │
+│  ┌──────────────────────────────────┐  │
+│  │ size: Size of the block          │  │
+│  │ is_free: Free/allocated flag     │  │
+│  │ next: Pointer to next block      │  │
+│  └──────────────────────────────────┘  │
 ├────────────────────────────────────────┤
-│  User Data Area                       │
-│  (requested memory)                   │
+│  User Data Area                        │
+│  (requested memory)                    │
 │                                        │
 └────────────────────────────────────────┘
 ```
