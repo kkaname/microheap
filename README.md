@@ -9,11 +9,11 @@
 
 </div>
 
-## 📖 Overview
+## Overview
 
 MicroHeap is a custom implementation of dynamic memory allocation functions (`malloc`, `free`, `calloc`, `realloc`) built from scratch using low-level system calls. This project demonstrates fundamental concepts of memory management including heap manipulation, memory alignment, and thread safety.
 
-## ✨ Features
+## Features
 
 - **Custom Memory Allocation**: Drop-in replacements for standard C memory functions
 - **Thread-Safe**: Uses pthread mutexes to ensure safe concurrent access
@@ -23,7 +23,7 @@ MicroHeap is a custom implementation of dynamic memory allocation functions (`ma
 - **Memory Reallocation**: Efficient `realloc` with data preservation
 - **Overflow Protection**: Built-in overflow checks in `calloc`
 
-## 🛠️ Implementation Details
+## Implementation Details
 
 ### Architecture
 
@@ -56,7 +56,7 @@ Memory Block Structure:
 
 4. **Free List Management**: Maintains linked list of all blocks
 
-## 📋 API Reference
+## API Reference
 
 ### `void *my_malloc(size_t size)`
 Allocates a block of memory.
@@ -78,7 +78,7 @@ Resizes an existing memory block.
 - **Parameters**: `block` - Existing block, `size` - New size
 - **Returns**: Pointer to resized block, or `NULL` on failure
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -117,7 +117,7 @@ int main() {
 }
 ```
 
-## 📊 Example Output
+## Example Output
 
 Run `example_program.c` to see comprehensive demonstrations:
 
@@ -135,7 +135,7 @@ Writing values: 10 20 30 40 50 60 70 80 90 100
 ...
 ```
 
-## 🔍 How It Works
+## How It Works
 
 1. **Allocation Process**:
    - Searches for free block in existing list
@@ -152,7 +152,7 @@ Writing values: 10 20 30 40 50 60 70 80 90 100
    - If new size fits in current block, returns same pointer
    - Otherwise, allocates new block, copies data, frees old block
 
-## 🐛 Known Limitations
+## Known Limitations
 
 1. **No Block Splitting**: Large free blocks aren't split for smaller requests
 2. **No Coalescing**: Adjacent free blocks aren't merged (fragmentation)
@@ -170,16 +170,6 @@ Writing values: 10 20 30 40 50 60 70 80 90 100
 - [ ] Add boundary checking for buffer overflow detection
 - [ ] Optimize alignment and reduce overhead
 - [ ] Add memory pool support for fixed-size allocations
-
-## 📚 Learning Resources
-
-This project demonstrates:
-- Dynamic memory management
-- System calls (`sbrk`, `brk`)
-- Data structure design (linked lists)
-- Thread synchronization
-- Memory alignment
-- Pointer arithmetic
 
 ## 🤝 Contributing
 
