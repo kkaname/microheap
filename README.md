@@ -11,7 +11,7 @@
 
 ## Overview
 
-MicroHeap is a custom implementation of dynamic memory allocation functions (`malloc`, `free`, `calloc`, `realloc`) built from scratch using low-level system calls. This project demonstrates fundamental concepts of memory management including heap manipulation, memory alignment, and thread safety.
+MicroHeap is a custom implementation of dynamic memory allocation functions (`malloc`, `free`, `calloc`, `realloc`) built from scratch using low-level system calls. This project demonstrates fundamental concepts of memory management including heap manipulation, memory alignment, with thread safety.
 
 ## Features
 
@@ -45,7 +45,7 @@ Memory Block Structure:
 
 ### Key Components
 
-1. **Block Header**: Metadata structure hidden from users
+1. **Block Header**: Metadata structure hidden from users(calling functions)
    - Size tracking
    - Free/allocated status
    - Linked list for block management
@@ -60,22 +60,22 @@ Memory Block Structure:
 
 ### `void *my_malloc(size_t size)`
 Allocates a block of memory.
-- **Parameters**: `size` - Number of bytes to allocate
+- **Parameters to be Passed**: `size` - Number of bytes to allocate
 - **Returns**: Pointer to allocated memory, or `NULL` on failure
 
 ### `void my_free(void *block)`
 Frees a previously allocated block.
-- **Parameters**: `block` - Pointer to memory to free
+- **Parameters to be Passed**: `block` - Pointer to memory to free
 - **Behavior**: Returns memory to OS if at end of heap, otherwise marks as free
 
 ### `void *my_calloc(size_t num, size_t nsize)`
 Allocates and zero-initializes memory for an array.
-- **Parameters**: `num` - Number of elements, `nsize` - Size per element
+- **Parameters to be Passed**: `num` - Number of elements, `nsize` - Size per element
 - **Returns**: Pointer to zeroed memory, or `NULL` on failure
 
 ### `void *my_realloc(void *block, size_t size)`
 Resizes an existing memory block.
-- **Parameters**: `block` - Existing block, `size` - New size
+- **Parameters to be Passed**: `block` - Existing block, `size` - New size
 - **Returns**: Pointer to resized block, or `NULL` on failure
 
 ## Getting Started
