@@ -160,7 +160,7 @@ Writing values: 10 20 30 40 50 60 70 80 90 100
 4. **Limited Error Handling**: Basic error checking, could be more robust
 5. **Performance**: Not optimized for high-performance scenarios
 
-## 🎯 Future Improvements
+## Future Improvements
 
 - [ ] Implement block splitting for better memory utilization
 - [ ] Add block coalescing to reduce fragmentation
@@ -171,7 +171,7 @@ Writing values: 10 20 30 40 50 60 70 80 90 100
 - [ ] Optimize alignment and reduce overhead
 - [ ] Add memory pool support for fixed-size allocations
 
-## 🤝 Contributing
+## Contributing
 
 Feel free to fork, improve, and submit pull requests. This is an educational project!
 
