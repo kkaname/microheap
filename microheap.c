@@ -58,7 +58,7 @@ void *my_malloc(size_t size) {
 
     pthread_mutex_lock(&global_malloc_lock);
 
-    header = get_free_block(size);
+    header = get_free_block(aligned_size);
     if (header) {
         header->s.is_free = 0;
         pthread_mutex_unlock(&global_malloc_lock);
@@ -143,9 +143,14 @@ void *my_calloc(size_t num, size_t nsize) {
 }
 
 void *my_realloc(void *block, size_t size) {
-    if (!block || !size) {
+    if (!block) {
         return my_malloc(size);
     }
+    if (!size) {
+        my_free(block);
+        return NULL;
+    }
+
     header_t *header;
     void *ret;
     header = (header_t *)block - 1;
