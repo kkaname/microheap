@@ -52,7 +52,7 @@ void *my_malloc(size_t size) {
         return NULL;
     }
     size_t aligned_size = ALIGN16(size);
-    size_t total_size = size + sizeof(header_t);
+    size_t total_size = aligned_size + sizeof(header_t);
     void *block = NULL;
     header_t *header = NULL;
 
@@ -70,16 +70,17 @@ void *my_malloc(size_t size) {
         pthread_mutex_unlock(&global_malloc_lock);
         return NULL;
     }
-    header->s.size = aligned_size;
+    header->s.size = size;
     header->s.is_free = 0;
     header->s.next = NULL;
+
     if(!head) {
         head = tail= header;
     }
-    if (tail) {
+    else {
         tail->s.next = header;
+        tail = header;
     }
-    tail = header;
     pthread_mutex_unlock(&global_malloc_lock);
     return (void *)((header_t *)header + 1);
 }
@@ -113,13 +114,13 @@ void my_free(void *block) {
         }
         sbrk(0 - sizeof(header_t) + header->s.size);
         pthread_mutex_unlock(&global_malloc_lock);
-        printf("Block freed successfully\n");
+        // printf("Block freed successfully\n");
         return;
     }
-    header->s.size = 0;
+    // header->s.size = 0;
     header->s.is_free = 1;
     pthread_mutex_unlock(&global_malloc_lock);
-    printf("Block marked as free\n");
+    // printf("Block marked as free\n");
     return;
 }
 
